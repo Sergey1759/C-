@@ -1,0 +1,53 @@
+package com.company;
+
+class Car{
+    String name;
+    double power;
+
+    public Car(String name, double power){
+        this.name = name;
+        this.power = power;
+    }
+
+    public void addPover(double power){
+        if(this.power > 5){
+        if (power < 5 && power > 0) {this.power += power;
+        } else {
+            System.out.println("error");
+        }}
+    }
+
+    public void disPover(double power){
+        if(this.power > 5){
+        if (power < 5 && power > 0){ this.power -= power;}
+        else {
+            System.out.println("error");
+        }
+    }}
+    public void out(){
+        System.out.println("name" + this.name);
+        System.out.println("power" + this.power);
+        System.out.println("");
+    }
+
+        };
+
+
+public class Main {
+
+    public static void main(String[] args) {
+	Car lada = new Car("ahsg",7);
+lada.disPover(4);
+lada.disPover(4);
+        System.out.println(lada.power);
+        //	lada.out();
+//	lada.addPover(4);
+//	lada.out();
+//	lada.addPover(6);
+//        lada.out();
+//	lada.disPover(2);
+//        lada.out();
+
+
+    }
+}
