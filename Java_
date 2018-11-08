@@ -1,0 +1,113 @@
+package com.company;
+
+
+import java.util.Arrays;
+
+public class Main {
+
+    public static void main(String[] args) {
+		int[][] mas_m1 = {{2,1},{3,4}};
+    	Matrix m1 = new Matrix(mas_m1);
+
+		int[][] mas_m2 = {{2,9},{3,7}};
+		Matrix m2 = new Matrix(mas_m2);
+
+//		m1.add(mas_m2);
+//		m1.show();
+//		m1.division(m2);
+//		m1.show();
+
+		Vector v1 = new Vector(1,2);
+		Vector v2 = new Vector(3,4);
+		//System.out.println(v1.alist.size());
+		v1.alist.add(32.0);
+		v1.show();
+//		for (double[] h: v1.alist) {
+//			System.out.println(Arrays.toString(h));
+//		}
+	}
+}
+
+
+package com.company;
+public class Matrix {
+
+    int[][] matrix;
+
+    public Matrix(int[][] matrix) {
+        this.matrix = matrix;
+    }
+
+    void add(int[][] matrix){
+        for(int i = 0; i < matrix.length; i++){
+            for(int j = 0; j < matrix.length; j++){
+                this.matrix[i][j] += matrix[i][j];
+            }
+        }
+    }
+    void add(Matrix m1){
+        for(int i = 0; i < m1.matrix.length; i++){
+            for(int j = 0; j < m1.matrix.length; j++){
+                this.matrix[i][j] +=  m1.matrix[i][j];
+            }
+        }
+    }
+
+    void division(int[][] matrix){
+        for(int i = 0; i < matrix.length; i++){
+            for(int j = 0; j < matrix.length; j++){
+                this.matrix[i][j] -= matrix[i][j];
+            }
+        }
+    }
+
+    void division(Matrix m1){
+        for(int i = 0; i < m1.matrix.length; i++){
+            for(int j = 0; j < m1.matrix.length; j++){
+                this.matrix[i][j] -=  m1.matrix[i][j];
+            }
+        }
+    }
+
+    void show(){
+        for(int i = 0; i < matrix.length; i++){
+            for(int j = 0; j < matrix.length; j++){
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println(' ');
+        }
+    }
+
+
+}
+
+
+
+
+
+package com.company;
+
+import java.util.*;
+
+public class Vector {
+
+    ArrayList<Double> alist = new ArrayList<>();
+
+     Vector(double i,double j){
+         this.alist.add(i);
+         this.alist.add(j);
+     }
+
+    void addition(Vector v){
+         for(int i = 0; i < v.alist.size();i++){
+             this.alist.set(i, v.alist.get(i));
+         }
+    }
+
+    void show () {
+        for (int i = 0; i < alist.size(); i++) {
+                System.out.println(alist.get(i));
+
+            }
+        }
+    }
